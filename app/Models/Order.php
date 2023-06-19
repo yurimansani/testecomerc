@@ -12,11 +12,11 @@ class Order extends Model
 {
     use HasFactory;
     use SoftDeletes;
-    
+
     protected $fillable = [
         'amount', 'status', 'client', 'product',
     ];
-    
+
 
     /**
      * Get the post that owns the comment.

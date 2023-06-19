@@ -15,9 +15,9 @@ class ProductController extends Controller
     {
         $pagination = Product::paginate(20);
         return Inertia::render('Products/Index', [
-            'nextCursor'=>$pagination->currentPage() + 1,
-            'previousCursor'=>($pagination->currentPage() - 1)? $pagination->currentPage() - 1: 1,
-            'nextPageUrl'=>$pagination->nextPageUrl(),
+            'nextCursor' => $pagination->currentPage() + 1,
+            'previousCursor' => ($pagination->currentPage() - 1) ? $pagination->currentPage() - 1 : 1,
+            'nextPageUrl' => $pagination->nextPageUrl(),
             'currentPage' => $pagination->currentPage(),
             'hasPages' => $pagination->hasPages(),
             'lastPage' => $pagination->lastPage(),
@@ -44,7 +44,7 @@ class ProductController extends Controller
             'name' =>           'required|string|max:100',
             'price' =>          'required|string|max:100',
         ]);
-        $file = "data:image/png;base64,".base64_encode(file_get_contents($request->file('photo')));
+        $file = "data:image/png;base64," . base64_encode(file_get_contents($request->file('photo')));
         $validated['photo'] = $file;
 
         Product::create($validated);
@@ -65,7 +65,7 @@ class ProductController extends Controller
     public function edit(Product $product)
     {
         // dd($product);
-        return Inertia::render('Products/Edit',['product' => $product]);
+        return Inertia::render('Products/Edit', ['product' => $product]);
     }
 
     /**
@@ -78,8 +78,8 @@ class ProductController extends Controller
             'name' =>           'required|string|max:100',
             'price' =>          'required|numeric',
         ]);
-        if($request->hasFile('photo')){
-            $file = "data:image/png;base64,".base64_encode(file_get_contents($request->file('photo')));
+        if ($request->hasFile('photo')) {
+            $file = "data:image/png;base64," . base64_encode(file_get_contents($request->file('photo')));
             $product->photo = $file;
         }
         $product->name = $validated['name'];
@@ -91,7 +91,7 @@ class ProductController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Product $product,Request $request)
+    public function destroy(Product $product, Request $request)
     {
         $product->delete();
         return redirect(route('products.index'));

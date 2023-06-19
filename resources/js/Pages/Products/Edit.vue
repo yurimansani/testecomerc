@@ -16,10 +16,10 @@ defineProps(['product']);
 
         <div class="py-12">
             <div class="">
-                <EditProductformationForm :product="product"/>
+                <EditProductformationForm :product="product" />
                 <!-- {{ 'product' }}
                 {{ product }} -->
-               
+
             </div>
         </div>
     </AuthenticatedLayout>

@@ -11,7 +11,7 @@ class Product extends Model
 {
     use HasFactory;
     use SoftDeletes;
-    
+
     /**
      * The attributes that are mass assignable.
      *
@@ -22,7 +22,7 @@ class Product extends Model
         'price',
         'photo',
     ];
-    
+
     public function orders(): BelongsTo
     {
         return $this->belongsTo(OrderProduct::class);

@@ -24,16 +24,15 @@ class ClientController extends Controller
         //     'clients' => $pagination->items(),
         // ]);
         return Inertia::render('Clients/Index', [
-            'nextCursor'=>$pagination->currentPage() + 1,
-            'previousCursor'=>($pagination->currentPage() - 1)? $pagination->currentPage() - 1: 1,
-            'nextPageUrl'=>$pagination->nextPageUrl(),
+            'nextCursor' => $pagination->currentPage() + 1,
+            'previousCursor' => ($pagination->currentPage() - 1) ? $pagination->currentPage() - 1 : 1,
+            'nextPageUrl' => $pagination->nextPageUrl(),
             'currentPage' => $pagination->currentPage(),
             'hasPages' => $pagination->hasPages(),
             'lastPage' => $pagination->lastPage(),
             'previousPageUrl' => $pagination->previousPageUrl(),
             'clients' => $pagination->items(),
         ]);
-
     }
 
     /**
@@ -77,8 +76,7 @@ class ClientController extends Controller
      */
     public function edit(Client $client)
     {
-        return Inertia::render('Clients/Edit',['client' => $client]);
-
+        return Inertia::render('Clients/Edit', ['client' => $client]);
     }
 
     /**

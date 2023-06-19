@@ -51,7 +51,7 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
-        
+
         $validated = $request->validate([
             'amount' =>         'required|numeric',
             'status' =>         'required|string',
@@ -64,7 +64,7 @@ class OrderController extends Controller
         $orderId = Order::insertGetId([
             'amount' => $validated['amount'],
             'status' => $validated['status'],
-            'client_id' => $validated['client']['id'] ,
+            'client_id' => $validated['client']['id'],
         ]);
         foreach ($products as $product) {
 
@@ -73,10 +73,8 @@ class OrderController extends Controller
                 'order_id' => $orderId,
                 'product_id' => $product['id']
             ]);
-            
         }
         return redirect(route('orders.index'));
-
     }
 
     /**
@@ -106,15 +104,15 @@ class OrderController extends Controller
      */
     public function update(Request $request, Order $order)
     {
-        
+
         $validated = $request->validate([
             'amount' =>         'required|numeric',
             'status' =>         'required|string',
             'client' =>         'required',
             'products' =>         'required',
         ]);
-        
-        OrderProduct::where('order_id',$order->id)->delete();
+
+        OrderProduct::where('order_id', $order->id)->delete();
         $products = $request->input('products');
 
         $order->amount = $validated['amount'];
@@ -130,7 +128,6 @@ class OrderController extends Controller
                 'order_id' => $order->id,
                 'product_id' => $product['id']
             ]);
-            
         }
         return redirect(route('orders.index'));
     }
@@ -141,8 +138,8 @@ class OrderController extends Controller
     public function destroy(Order $order)
     {
 
-        OrderProduct::where('order_id',$order->id)->delete();
-        
+        OrderProduct::where('order_id', $order->id)->delete();
+
         $order->delete();
         return redirect(route('orders.index'));
     }

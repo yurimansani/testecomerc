@@ -3,7 +3,7 @@ import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
 import { Head } from '@inertiajs/vue3';
 import CreateOrderForm from './Partials/CreateOrderForm.vue';
 
-defineProps(['products','clients']);
+defineProps(['products', 'clients']);
 
 </script>
 
@@ -17,7 +17,7 @@ defineProps(['products','clients']);
 
         <div class="py-12">
             <div class="">
-                <CreateOrderForm :products="products" :clients="clients"/>
+                <CreateOrderForm :products="products" :clients="clients" />
             </div>
         </div>
     </AuthenticatedLayout>

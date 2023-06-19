@@ -21,26 +21,13 @@ const form = useForm({
 });
 
 
-// import { router } from '@inertiajs/vue3'
-
-// router.on('finish', () => {
-//     console.log(product);
-//     form.name = product.name;
-//     form.price = product.price;
-// })
-// onMounted(() => {
-//     console.log(product);
-//     form.name = product.name;
-//     form.price = product.price;
-//     // form.photo = product.photo;
-    
-// });
 </script>
 
 <template>
-    <form @submit.prevent="form.post(route('products.update',{product:product.id}),)" enctype="multipart/form-data" class="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-6" >
-        
-    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+    <form @submit.prevent="form.post(route('products.update', { product: product.id }),)" enctype="multipart/form-data"
+        class="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-6">
+
+        <input type="hidden" name="_token" value="{{ csrf_token() }}">
         <div>
             <div class="p-4 sm:p-8 bg-white shadow sm:rounded-lg">
 
@@ -55,7 +42,7 @@ const form = useForm({
                             <InputLabel for="name" value="Produto" />
 
                             <TextInput id="name" type="text" placeholder="Digite aqui..." class="mt-1 block w-full"
-                                v-model="form.name" required autofocus autocomplete="name"  />
+                                v-model="form.name" required autofocus autocomplete="name" />
 
                             <InputError class="mt-2" :message="form.errors.name" />
                         </div>
@@ -63,8 +50,8 @@ const form = useForm({
                         <div>
                             <InputLabel for="price" value="Preço" />
 
-                            <TextInput id="price" step="0.01" type="number" placeholder="Digite aqui..." class="mt-1 block w-full"
-                                v-model="form.price" required />
+                            <TextInput id="price" step="0.01" type="number" placeholder="Digite aqui..."
+                                class="mt-1 block w-full" v-model="form.price" required />
 
                             <InputError class="mt-2" :message="form.errors.price" />
                         </div>
@@ -72,7 +59,8 @@ const form = useForm({
                             <InputLabel for="photo" value="Foto do Produto" />
 
                             <img v-if="product.photo && form.photo == null" width="200" :src="product.photo">
-                            <TextInput @input="form.photo = $event.target.files[0]" accept="image/*" id="photo" type="file" class="mt-1 block w-full block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 "  />
+                            <TextInput @input="form.photo = $event.target.files[0]" accept="image/*" id="photo" type="file"
+                                class="mt-1 block w-full block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 " />
 
                             <InputError class="mt-2" :message="form.errors.photo" />
                         </div>
@@ -80,7 +68,7 @@ const form = useForm({
                         <div class="flex items-center gap-4">
                             <PrimaryButton :disabled="form.processing">Salvar</PrimaryButton>
                             <Link :href="route('products.index')">
-                                <DangerButton >Cancelar</DangerButton>
+                            <DangerButton>Cancelar</DangerButton>
                             </Link>
 
                             <Transition enter-from-class="opacity-0" leave-to-class="opacity-0"
@@ -103,6 +91,6 @@ const form = useForm({
         </div>
 
 
-      
+
     </form>
 </template>

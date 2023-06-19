@@ -14,9 +14,9 @@ import ProductformationForm from './Partials/ProductformationForm.vue';
 
         <div class="py-12">
             <div class="">
-                <ProductformationForm/>
+                <ProductformationForm />
 
-               
+
             </div>
         </div>
     </AuthenticatedLayout>

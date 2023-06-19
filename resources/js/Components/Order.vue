@@ -2,9 +2,9 @@
 defineProps(['order']);
 
 import DeleteOrderForm from '@/Pages/Orders/Partials/DeleteOrderForm.vue';
-import { PencilIcon, DocumentTextIcon} from "@heroicons/vue/24/outline";
+import { PencilIcon, DocumentTextIcon } from "@heroicons/vue/24/outline";
 import SecondaryButton from '@/Components/SecondaryButton.vue';
-import { Link} from '@inertiajs/vue3';
+import { Link } from '@inertiajs/vue3';
 import { ref } from 'vue';
 import Modal from '@/Components/Modal.vue';
 
@@ -31,7 +31,7 @@ const closeDeleteOrderModal = () => {
     <tr>
         <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800">{{ order.id }}</td>
         <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800">{{ order.amount }}</td>
-        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800">{{ (order.status == 'open')?'Aberto':'Fechado' }}</td>
+        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800">{{ (order.status == 'open') ? 'Aberto' : 'Fechado' }}</td>
         <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800">{{ order.client.name }}</td>
         <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800">
             <SecondaryButton @click="openViewProductsModal">
@@ -40,13 +40,15 @@ const closeDeleteOrderModal = () => {
         </td>
 
         <td class="px-6 py-4 whitespace-nowrap text-sm text-sm font-medium inline-flex ">
-            <Link v-if="order.status == 'open'" :href="route('orders.edit',{id: order.id})">
-                <SecondaryButton @click="openDeleteModal">
-                    <PencilIcon class="h-6 w-6 text-gray-500" />
-                </SecondaryButton>
+            <Link v-if="order.status == 'open'" :href="route('orders.edit', { id: order.id })">
+            <SecondaryButton @click="openDeleteModal">
+                <PencilIcon class="h-6 w-6 text-gray-500" />
+            </SecondaryButton>
             </Link> &nbsp;
-            
-            <a class="text-blue-500 hover:text-blue-700 mx-8" href="#"><DeleteOrderForm :orderId="order.id" class="max-w-xl " /></a>
+
+            <a class="text-blue-500 hover:text-blue-700 mx-8" href="#">
+                <DeleteOrderForm :orderId="order.id" class="max-w-xl " />
+            </a>
         </td>
     </tr>
 
@@ -60,25 +62,25 @@ const closeDeleteOrderModal = () => {
                 <thead class="bg-gray-50">
                     <tr>
                         <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">#</th>
-                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Nome do Cliente</th>
+                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Nome do
+                            Cliente</th>
                         <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Foto</th>
                     </tr>
                 </thead>
                 <tbody class="divide-y divide-gray-200">
-                    <tr
-                        v-for="product in order.product"
-                        >
-                        
+                    <tr v-for="product in order.product">
+
                         <td class="px-6 py-3 text-left text-xs font-medium text-gray-500">{{ product.product.id }}</td>
                         <td class="px-6 py-3 text-left text-xs font-medium text-gray-500">{{ product.product.name }}</td>
-                        <td class="px-6 py-3 text-left text-xs font-medium text-gray-500"> <img :src="product.product.photo" width="100" ></td>
+                        <td class="px-6 py-3 text-left text-xs font-medium text-gray-500"> <img :src="product.product.photo"
+                                width="100"></td>
                     </tr>
                 </tbody>
             </table>
 
 
             <div class="py-3 px-4 text-right float-right">
-                <div class="relative max-w-xs"> 
+                <div class="relative max-w-xs">
                     <SecondaryButton @click="closeViewProductsModal"> Cancelar </SecondaryButton>&nbsp;
                 </div>
             </div>

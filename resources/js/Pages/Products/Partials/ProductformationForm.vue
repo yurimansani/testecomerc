@@ -64,13 +64,6 @@ const form = useForm({
                                 <p v-if="form.recentlySuccessful" class="text-sm text-gray-600">Salvo.</p>
                             </Transition>
                         </div>
-                        <!-- <div class="flex items-center gap-4">
-                        <PrimaryButton :disabled="form.processing">Save</PrimaryButton>
-
-                        <Transition enter-from-class="opacity-0" leave-to-class="opacity-0" class="transition ease-in-out">
-                            <p v-if="form.recentlySuccessful" class="text-sm text-gray-600">Saved.</p>
-                        </Transition>
-                    </div> -->
                     </div>
                 </section>
             </div>

@@ -3,7 +3,7 @@ import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
 import { Head } from '@inertiajs/vue3';
 import EditOrderForm from './Partials/EditOrderForm.vue';
 
-defineProps(['orderData','allClients','allProducts']);
+defineProps(['orderData', 'allClients', 'allProducts']);
 
 </script>
 

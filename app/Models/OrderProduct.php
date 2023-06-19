@@ -10,11 +10,11 @@ class OrderProduct extends Model
 {
     use HasFactory;
     use SoftDeletes;
-    
+
     protected $fillable = [
         'order', 'product',
     ];
-    
+
     public function order()
     {
         return $this->belongsTo(Order::class);
@@ -24,5 +24,4 @@ class OrderProduct extends Model
     {
         return $this->belongsTo(Product::class);
     }
-    
 }

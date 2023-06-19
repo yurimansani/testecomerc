@@ -30,7 +30,7 @@ const confirmProductDeletion = () => {
 const deleteProduct = (orderId) => {
     console.log(orderId);
     form.orderId = orderId;
-    form.delete(route('orders.destroy',{order:orderId}), {
+    form.delete(route('orders.destroy', { order: orderId }), {
         preserveScroll: true,
         onSuccess: () => closeModal(),
         onFinish: () => form.reset(),
@@ -64,12 +64,8 @@ const closeModal = () => {
                 <div class="mt-6 flex justify-end">
                     <SecondaryButton @click="closeModal"> Cancelar </SecondaryButton>
 
-                    <DangerButton
-                        class="ml-3"
-                        :class="{ 'opacity-25': form.processing }"
-                        :disabled="form.processing"
-                        @click="deleteProduct(orderId)"
-                    >
+                    <DangerButton class="ml-3" :class="{ 'opacity-25': form.processing }" :disabled="form.processing"
+                        @click="deleteProduct(orderId)">
                         Apagar Pedido
                     </DangerButton>
                 </div>

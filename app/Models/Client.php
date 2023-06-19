@@ -11,7 +11,7 @@ class Client extends Model
 {
     use HasFactory;
     use SoftDeletes;
-    
+
     /**
      * The attributes that are mass assignable.
      *
@@ -26,7 +26,7 @@ class Client extends Model
         'neighborhood',
         'zipcode'
     ];
-    
+
     public function orders(): HasMany
     {
         return $this->hasMany(Order::class);
