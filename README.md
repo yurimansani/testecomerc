@@ -1,5 +1,9 @@
 Comandos para instalar a aplicação:
 
+copie o arquivo .env.exemple e cole como .env
+
+inicie o terminal e realize os seguintes comandos
+
 composer install
 
 npm install
@@ -15,4 +19,7 @@ php artisan serve
 npm run dev
 
 
+Abra o navegador em http://localhost:8000/register
+
+e realize o cadastro para ter acesso ao sistema
 
