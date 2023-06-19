@@ -1,9 +1,12 @@
-Comandos para instalar a aplicação:
+https://github.com/yurimansani/testecomerc.git
+
+Realize o clone do projeto
 
 copie o arquivo .env.exemple e cole como .env
 
-inicie o terminal e realize os seguintes comandos
+inicie o terminal e realize os seguintes comandos:
 
+Comandos para instalar a aplicação:
 composer install
 
 npm install
