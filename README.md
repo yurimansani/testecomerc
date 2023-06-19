@@ -23,7 +23,13 @@ Abra o navegador em http://localhost:8000/register
 
 e realize o cadastro para ter acesso ao sistema
 
+ou acesse com o 
+
+login: test@example.com
+
+senha:password
 
 
 
 A aplicação possui frontend com inertia usei configurei com sqlite para rapida instalação
+
