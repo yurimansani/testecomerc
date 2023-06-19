@@ -26,4 +26,4 @@ e realize o cadastro para ter acesso ao sistema
 
 
 
-A aplicação possui frontend com inertia usei configurei como sqlite para rapida instalação
+A aplicação possui frontend com inertia usei configurei com sqlite para rapida instalação
