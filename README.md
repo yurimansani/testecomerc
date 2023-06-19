@@ -33,3 +33,5 @@ senha:password
 
 A aplicação possui frontend com inertia usei configurei com sqlite para rapida instalação
 
+Todas as telas de listagem possui paginacao acima de 20 registros
+
